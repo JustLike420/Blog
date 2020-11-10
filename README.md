@@ -28,3 +28,11 @@ ____
 ```
 python manage.py collectstatic
 ```
+_____
+### Creating DB
+```
+python manage.py makemigrations
+```
+```
+python manage.py migrate
+```
