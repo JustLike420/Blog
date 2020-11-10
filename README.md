@@ -19,3 +19,8 @@ ____
 django-admin startproject siteblog
 ```
 ____
+### Creating new app - SiteBlog
+```
+python manage.py createapp siteblog
+```
+____
