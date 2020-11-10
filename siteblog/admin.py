@@ -4,6 +4,7 @@ from .models import Post, Tag, Category
 
 class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}  # автоматическое составление url из название
+    save_as = True
 
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
