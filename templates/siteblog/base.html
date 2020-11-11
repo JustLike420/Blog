@@ -1,4 +1,5 @@
 {% load static %}
+{% load cache %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,13 +20,16 @@
 
 <body>
     <div class="wrapper">
-        <!-- вызывание файлов с частями-->
+    <!-- вызывание файлов с частями и хеширование на 20 сек-->
+        {% cache 20 header %}
         {% include 'inc/_header.html' %}
+        {% endcache %}
 
         {% block content %} {% endblock %}
 
+        {% cache 20 footer %}
         {% include 'inc/_footer.html' %}
-
+        {% endcache %}
     </div>
     <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
