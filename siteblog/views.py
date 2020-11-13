@@ -11,7 +11,7 @@ class Home(ListView):
 
     def get_context_data(self, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Classic blog design'
+        context['title'] = 'Blog'
         return context
 
 
@@ -22,6 +22,7 @@ def index(request):
 
 def get_category(request, slug):
     return render(request, 'siteblog/category.html')
+
 
 def get_post(request, slug):
     return render(request, 'siteblog/category.html')

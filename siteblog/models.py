@@ -17,6 +17,7 @@ Post
 title, slug, author, content, created_at, photo, views, category, tags 
 '''
 
+
 class Category(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название')
     slug = models.SlugField(max_length=255, verbose_name='url', unique=True)
@@ -31,6 +32,7 @@ class Category(models.Model):
         verbose_name = 'Категорию'
         verbose_name_plural = 'Категории'
         ordering = ['title']  # сортирока по имяни в алф порядке
+
 
 class Tag(models.Model):
     title = models.CharField(max_length=255)
