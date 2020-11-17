@@ -13,7 +13,7 @@ class PostAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'slug', 'category', 'created_at', 'get_photo')  # какие поля показываются в admin
     list_display_links = ('id', 'title')
     search_fields = ('title',)  # поиск по названию темы
-    list_filter = ('category',)  # фильт по категориям
+    list_filter = ('category', 'tags')  # фильт по категориям
     read_only_fields = ('views',)
 
     # вывод фото поста в admin
