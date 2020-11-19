@@ -1,4 +1,4 @@
-.idea
+
 # Created by https://www.toptal.com/developers/gitignore/api/pycharm,python,django
 # Edit at https://www.toptal.com/developers/gitignore?templates=pycharm,python,django
 
@@ -315,6 +315,5 @@ fabric.properties
 # profiling data
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm,python,django
-/django_cache/
-/django_cache/
-/django_cache/
+.django_cache/
+.idea/
