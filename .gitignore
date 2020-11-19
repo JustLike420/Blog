@@ -61,7 +61,7 @@ htmlcov/
 .nox/
 .coverage
 .coverage.*
-.cache
+.django-cache
 nosetests.xml
 coverage.xml
 *.cover
@@ -315,3 +315,6 @@ fabric.properties
 # profiling data
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm,python,django
+/django_cache/
+/django_cache/
+/django_cache/
