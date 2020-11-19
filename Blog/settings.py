@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'django_ckeditor_5',
-    'siteblog.apps.SiteblogConfig',
+    'siteblog',
 ]
 
 MIDDLEWARE = [
