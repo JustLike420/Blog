@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Post, Category, Tag
 from django.db.models import F
@@ -71,4 +70,3 @@ class Search(ListView):
         context = super().get_context_data(**kwargs)
         context['s'] = f"s={self.request.GET.get('s')}&"
         return context
-

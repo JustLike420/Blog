@@ -19,7 +19,7 @@ title, slug, author, content, created_at, photo, views, category, tags
 
 
 class Category(models.Model):
-    title = models.CharField(max_length=255, verbose_name='Название')
+    title = models.CharField(max_length=255, verbose_name='Категория')
     slug = models.SlugField(max_length=255, verbose_name='url', unique=True)
 
     def __str__(self):
@@ -70,4 +70,4 @@ class Post(models.Model):
     class Meta:
         verbose_name = 'Статью'
         verbose_name_plural = 'Статьи'
-        ordering = ['created_at']  # сортирока по дате в обратном порядке свежие выше
+        ordering = ['-created_at']  # сортирока по дате в обратном порядке от нового к старому

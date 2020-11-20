@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-
 from .models import Post, Tag, Category
 
 
@@ -14,7 +13,7 @@ class PostAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'title')
     search_fields = ('title',)  # поиск по названию темы
     list_filter = ('category', 'tags')  # фильт по категориям
-    read_only_fields = ('views',)
+    read_only_fields = ('views',)  # поле только для чтения
 
     # вывод фото поста в admin
     def get_photo(self, obj):
@@ -22,18 +21,19 @@ class PostAdmin(admin.ModelAdmin):
             return mark_safe(f'<img src="{obj.photo.url}" width="50">')
         return '-'
 
-    get_photo.short_description = 'Фото'
+    get_photo.short_description = 'Фото'  # столбец с фото называется 'фото'
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"slug": ("title",)}
-    list_display = ['title']
+    prepopulated_fields = {"slug": ("title",)}  # при вводе названия делается ссылка
+    list_display = ['title']  # в админке столбцы
 
 
 class TagAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"slug": ("title",)}
+    prepopulated_fields = {"slug": ("title",)}  # при вводе названия делается ссылка
 
 
+# регестрация в админке
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Post, PostAdmin)
